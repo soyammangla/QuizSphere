@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-black-900 text-gray-300 py-6 mt-12">
@@ -6,7 +8,7 @@ export default function Footer() {
         <div>
           <h2 className="text-2xl font-bold text-white mb-3">QuizSphere</h2>
           <p className="text-sm text-gray-400">
-            Building in public at
+            Building in public at{" "}
             <a
               href="https://twitter.com/soyam_mangla"
               target="_blank"
@@ -20,22 +22,22 @@ export default function Footer() {
 
         {/* Features */}
         <div className="ml-auto">
-          <h3 className="text-lg font-semibold text-white mb-4 ">Features</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Features</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/" className="hover:text-white transition">
+              <Link href="/" className="hover:text-white transition">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/create" className="hover:text-white transition">
+              <Link href="/create" className="hover:text-white transition">
                 Create Quiz
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/profile" className="hover:text-white transition">
+              <Link href="/profile" className="hover:text-white transition">
                 Profile
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -79,19 +81,19 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-white mb-4">Others</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/about" className="hover:text-white transition">
+              <Link href="/about" className="hover:text-white transition">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/privacy" className="hover:text-white transition">
+              <Link href="/privacy" className="hover:text-white transition">
                 Privacy Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/terms" className="hover:text-white transition">
+              <Link href="/terms" className="hover:text-white transition">
                 Terms & Conditions
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
