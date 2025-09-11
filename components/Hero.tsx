@@ -1,0 +1,25 @@
+const Hero = () => {
+  return (
+    <div className="h-[460px] w-full flex flex-col justify-center items-center text-center px-4 bg-black mt-17 mb-18">
+      <h6 className="text-lg text-gray-300 mb-2 tracking-wide">
+        Welcome to{" "}
+        <span className="font-bold hover:text-blue-500">QuizSphere</span>
+      </h6>
+
+      <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 max-w-4xl">
+        Challenge Your <br />
+        Mind, One Quiz at a Time!
+      </h1>
+      <p className="text-gray-200 text-xl max-w-2xl">
+        Explore quizzes across Coding, GK, Movies, Sports, and more. Learn,
+        compete, and climb the leaderboard — every right answer takes you one
+        step closer to mastery!
+      </p>
+      <button className="mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition">
+        Start Quiz
+      </button>
+    </div>
+  );
+};
+
+export default Hero;
