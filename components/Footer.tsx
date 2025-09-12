@@ -6,14 +6,16 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & Tagline */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-3">QuizSphere</h2>
+          <h2 className="text-2xl font-bold text-white mb-3 hover:text-blue-500">
+            QuizSphere
+          </h2>
           <p className="text-sm text-gray-400">
             Building in public at{" "}
             <a
               href="https://twitter.com/soyam_mangla"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:underline"
+              className="text-blue-500 hover:underline "
             >
               @soyammangla
             </a>
