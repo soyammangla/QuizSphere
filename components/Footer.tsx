@@ -32,7 +32,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/create" className="hover:text-white transition">
+              <Link href="/createquiz" className="hover:text-white transition">
                 Create Quiz
               </Link>
             </li>
