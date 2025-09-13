@@ -9,7 +9,7 @@ interface Quiz {
   description: string;
   category: string;
   difficulty: string;
-  questions: number; // ✅ any removed
+  questions: number | { question: string; options: string[] }[]; // array or number
   created: string;
 }
 
@@ -17,7 +17,6 @@ export default function QuizDashboard() {
   const router = useRouter();
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
 
-  // Load quizzes from localStorage
   useEffect(() => {
     const saved = localStorage.getItem("quizzes");
     if (saved) setQuizzes(JSON.parse(saved));
@@ -25,7 +24,6 @@ export default function QuizDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
         <h1 className="text-5xl font-bold text-gray-800">QuizSphere</h1>
         <Link href="/createquiz">
@@ -35,7 +33,6 @@ export default function QuizDashboard() {
         </Link>
       </div>
 
-      {/* Quizzes Grid */}
       {quizzes.length === 0 ? (
         <p className="text-gray-500 text-center mt-40 text-lg">
           No quizzes yet. Click {`"Create New Quiz"`} to get started!
@@ -55,7 +52,10 @@ export default function QuizDashboard() {
 
                 <div className="flex flex-wrap gap-2 text-xs text-gray-500 mb-2">
                   <span className="bg-gray-100 px-2 py-1 rounded-full">
-                    {quiz.questions} Questions
+                    {Array.isArray(quiz.questions)
+                      ? quiz.questions.length
+                      : quiz.questions}{" "}
+                    Questions
                   </span>
                   <span className="bg-gray-100 px-2 py-1 rounded-full">
                     {quiz.difficulty}
@@ -70,7 +70,7 @@ export default function QuizDashboard() {
 
               <button
                 onClick={() => router.push(`/quiz/${quiz.id}`)}
-                className="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition transform duration-300 font-medium"
+                className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition transform duration-300 font-medium"
               >
                 Take Quiz
               </button>
