@@ -9,7 +9,7 @@ interface Quiz {
   description: string;
   category: string;
   difficulty: string;
-  questions: number | any[];
+  questions: number; // ✅ any removed
   created: string;
 }
 
@@ -38,7 +38,7 @@ export default function QuizDashboard() {
       {/* Quizzes Grid */}
       {quizzes.length === 0 ? (
         <p className="text-gray-500 text-center mt-40 text-lg">
-          No quizzes yet. Click "Create New Quiz" to get started!
+          No quizzes yet. Click {`"Create New Quiz"`} to get started!
         </p>
       ) : (
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -55,10 +55,7 @@ export default function QuizDashboard() {
 
                 <div className="flex flex-wrap gap-2 text-xs text-gray-500 mb-2">
                   <span className="bg-gray-100 px-2 py-1 rounded-full">
-                    {Array.isArray(quiz.questions)
-                      ? quiz.questions.length
-                      : quiz.questions}{" "}
-                    Questions
+                    {quiz.questions} Questions
                   </span>
                   <span className="bg-gray-100 px-2 py-1 rounded-full">
                     {quiz.difficulty}
