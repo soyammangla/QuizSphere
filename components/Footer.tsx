@@ -17,7 +17,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline "
             >
-              @soyammangla
+              @soyam
             </a>
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-white hover:underline"
         >
-          @soyammangla
+          @soyam
         </a>
       </div>
     </footer>
