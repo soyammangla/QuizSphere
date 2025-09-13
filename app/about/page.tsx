@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const About = () => {
@@ -8,9 +9,11 @@ const About = () => {
         <h3 className="font-bold text-white text-4xl">About QuizSphere</h3>{" "}
         <div className="mt-10 flex items-center">
           {" "}
-          <img
+          <Image
             src="/quiz.jpeg"
             alt="QuizSphere"
+            width={100}
+            height={100}
             className="w-100 h-100 object-contain rounded-2xl shadow-lg mr-5"
           />{" "}
           <p className="text-white max-w-3xl text-left text-lg ml-5">
@@ -18,7 +21,7 @@ const About = () => {
             QuizSphere is a modern platform designed to make learning fun and
             interactive. <br /> Whether you’re a student, a professional, or
             just curious, our quizzes help you learn, test, and grow in an
-            engaging way. <br /> We believe in “learning by doing”, so every
+            engaging way. <br /> We believe in {`"learning by doing"`}, so every
             quiz is built to challenge and entertain while educating. <br />{" "}
             With a smooth user experience and gamified elements, QuizSphere
             makes studying more exciting. <br /> Our vision is to create a

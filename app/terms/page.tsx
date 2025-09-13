@@ -59,7 +59,7 @@ export default function TermsAndConditions() {
           5. Limitation of Liability
         </h2>
         <p>
-          QuizSphere is provided "as is." We are not liable for any damages
+          QuizSphere is provided {`"as is."`} We are not liable for any damages
           arising from use of the platform, including errors, downtime, or loss
           of data.
         </p>

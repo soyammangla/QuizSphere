@@ -42,7 +42,7 @@ export default function QuizDashboard() {
 
       {quizzes.length === 0 ? (
         <p className="text-gray-500 text-center mt-40 text-lg">
-          No quizzes yet. Click "Create New Quiz" to get started!
+          No quizzes yet. Click {`"Create New Quiz"`} to get started!
         </p>
       ) : (
         <div className="grid md:grid-cols-3 gap-6">
