@@ -1,0 +1,77 @@
+import Link from "next/link";
+export default function TermsAndConditions() {
+  return (
+    <section className="max-w-5xl mx-auto px-6 py-16 text-white">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold mb-6 text-center">
+        Terms and Conditions
+      </h1>
+      <p className="mb-10 text-center">
+        Welcome to QuizSphere! These Terms and Conditions outline the rules and
+        regulations for using our platform. By accessing or using QuizSphere,
+        you agree to comply with these terms.
+      </p>
+
+      {/* 1. Acceptance */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-3">1. Acceptance of Terms</h2>
+        <p>
+          By accessing QuizSphere, you agree to these Terms and Conditions. If
+          you do not agree, please do not use our services.
+        </p>
+      </div>
+
+      {/* 2. Use of Platform */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-3">2. Use of Platform</h2>
+        <ul className="list-disc pl-6 space-y-2 mt-2">
+          <li>You must provide accurate information when registering.</li>
+          <li>Do not misuse or disrupt the platform or services.</li>
+          <li>Respect other users and maintain a friendly environment.</li>
+        </ul>
+      </div>
+
+      {/* 3. Intellectual Property */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-3">
+          3. Intellectual Property
+        </h2>
+        <p>
+          All content, quizzes, logos, and materials on QuizSphere are owned by
+          QuizSphere and protected by copyright laws. You may not reproduce or
+          distribute content without permission.
+        </p>
+      </div>
+
+      {/* 4. User Content */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-3">4. User Content</h2>
+        <p>
+          Any content you submit, such as comments or quiz suggestions, must not
+          violate any laws or rights of others. QuizSphere reserves the right to
+          remove inappropriate content.
+        </p>
+      </div>
+
+      {/* 5. Limitation of Liability */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-3">
+          5. Limitation of Liability
+        </h2>
+        <p>
+          QuizSphere is provided "as is." We are not liable for any damages
+          arising from use of the platform, including errors, downtime, or loss
+          of data.
+        </p>
+      </div>
+      <div className="text-center mt-8 hover:underline">
+        <Link
+          href="/"
+          className="inline-block text-white font-semibold py-2 px-6 rounded-lg"
+        >
+          Back to QuizSphere
+        </Link>
+      </div>
+    </section>
+  );
+}

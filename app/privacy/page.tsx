@@ -78,7 +78,7 @@ export default function PrivacyPolicy() {
           <li>Withdraw consent for email/notifications at any time.</li>
         </ul>
       </div>
-      <div className="text-center mt-8">
+      <div className="text-center mt-8 hover:underline">
         <Link
           href="/"
           className="inline-block text-white font-semibold py-2 px-6 rounded-lg"

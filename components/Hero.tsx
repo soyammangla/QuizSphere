@@ -1,3 +1,4 @@
+import Link from "next/link";
 const Hero = () => {
   return (
     <div className="h-[460px] w-full flex flex-col justify-center items-center text-center px-4 bg-black mt-17 mb-18">
@@ -15,9 +16,12 @@ const Hero = () => {
         compete, and climb the leaderboard — every right answer takes you one
         step closer to mastery!
       </p>
-      <button className="mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition">
-        Start Quiz
-      </button>
+      <Link
+        href="/signin"
+        className="inline-block mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
+      >
+        Get Started
+      </Link>
     </div>
   );
 };

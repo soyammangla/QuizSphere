@@ -37,8 +37,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/profile" className="hover:text-white transition">
-                Profile
+              <Link href="/about" className="hover:text-white transition">
+                About
               </Link>
             </li>
           </ul>
