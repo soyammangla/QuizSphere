@@ -65,19 +65,18 @@ export default function CreateQuiz() {
       created: new Date().toLocaleDateString(),
     };
     localStorage.setItem("tempQuiz", JSON.stringify(newQuiz));
-    alert("Quiz Created! Check console for data.");
     console.log("Created Quiz:", newQuiz);
     router.push("/finalquiz"); // ya dashboard ke liye redirect
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-black p-6">
       {/* Centered form container */}
-      <div className="bg-white w-full max-w-4xl mx-auto rounded-2xl shadow-xl p-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
+      <div className="bg-neutral-950 w-full max-w-4xl mx-auto rounded-2xl shadow-xl p-8">
+        <h1 className="text-3xl font-bold text-white mb-4 text-center">
           Create New Quiz
         </h1>
-        <p className="text-gray-500 mb-6 text-center">
+        <p className="text-white mb-6 text-center">
           Add questions with multiple choice options
         </p>
 
@@ -85,7 +84,7 @@ export default function CreateQuiz() {
           {/* Quiz Info */}
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-white font-medium mb-2">
                 Quiz Title
               </label>
               <input
@@ -93,12 +92,13 @@ export default function CreateQuiz() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Enter quiz title"
-                className="w-full border px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full bg-neutral-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 placeholder-white"
                 required
               />
             </div>
+
             <div>
-              <label className="block text-gray-700 font-medium mb-2">
+              <label className="block text-white font-medium mb-2">
                 Category
               </label>
               <input
@@ -106,32 +106,32 @@ export default function CreateQuiz() {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 placeholder="Enter quiz category"
-                className="w-full border px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full bg-neutral-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 placeholder-white"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block text-white font-medium mb-2">
               Description
             </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Enter quiz description"
-              className="w-full border px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full bg-neutral-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 placeholder-white"
               rows={3}
             />
           </div>
 
           <div>
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block text-white font-medium mb-2">
               Difficulty
             </label>
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value)}
-              className="w-full border px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full bg-neutral-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 placeholder-white"
             >
               <option>Easy</option>
               <option>Medium</option>
@@ -142,22 +142,23 @@ export default function CreateQuiz() {
           {/* Questions */}
           <div>
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-xl font-semibold text-gray-800">Questions</h2>
+              <h2 className="text-xl font-semibold text-white">Questions</h2>
               <button
                 type="button"
                 onClick={addQuestion}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md transition"
+                className="bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded-lg shadow-md transition"
               >
                 + Add Question
               </button>
             </div>
 
             {questions.map((q, idx) => (
-              <div key={idx} className="border p-4 rounded-lg mb-4 bg-gray-50">
+              <div
+                key={idx}
+                className="bg-neutral-900 border border-gray-700 p-4 rounded-lg mb-4"
+              >
                 <div className="flex justify-between items-center mb-2">
-                  <h3 className="font-medium text-gray-700">
-                    Question {idx + 1}
-                  </h3>
+                  <h3 className="font-medium text-white">Question {idx + 1}</h3>
                   {questions.length > 1 && (
                     <button
                       type="button"
@@ -182,7 +183,7 @@ export default function CreateQuiz() {
                     )
                   }
                   placeholder="Enter your question"
-                  className="w-full px-3 py-2 border rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full bg-neutral-700 text-white px-3 py-2 border border-gray-600 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-white placeholder-white"
                   required
                 />
 
@@ -202,10 +203,10 @@ export default function CreateQuiz() {
                           )
                         }
                         placeholder={`Option ${optIdx + 1}`}
-                        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="w-full bg-neutral-700 text-white px-3 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white placeholder-white"
                         required
                       />
-                      <label className="text-sm text-gray-700 flex items-center">
+                      <label className="text-sm text-white flex items-center gap-1">
                         <input
                           type="radio"
                           name={`correct-${idx}`}
@@ -218,8 +219,8 @@ export default function CreateQuiz() {
                               optIdx
                             )
                           }
-                          className="accent-green-500"
-                        />{" "}
+                          className="accent-black"
+                        />
                         Correct
                       </label>
                     </div>
@@ -232,7 +233,7 @@ export default function CreateQuiz() {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transition transform duration-300"
+              className="bg-neutral-700 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transition transform duration-300"
             >
               Create Quiz
             </button>

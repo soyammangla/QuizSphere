@@ -57,21 +57,24 @@ export default function QuizPage() {
 
   if (finished)
     return (
-      <div className="min-h-screen bg-gray-50 p-6 flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold mb-4">{quiz.title}</h1>
-        <p className="text-gray-600 mb-6">{quiz.description}</p>
-        <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-md text-center">
-          <h2 className="text-2xl font-semibold mb-4">🎉 Quiz Finished!</h2>
-          <p className="text-lg mb-2">
-            Correct Answers: <span className="font-bold">{score}</span>
+      <div className="min-h-screen bg-black p-6 flex flex-col items-center justify-center">
+        <h1 className="text-3xl font-bold mb-4 text-white">{quiz.title}</h1>
+        <p className="text-gray-600 mb-6 text-white">{quiz.description}</p>
+        <div className="bg-neutral-900 rounded-xl shadow-md p-6 w-full max-w-md text-center">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            🎉 Quiz Finished!
+          </h2>
+          <p className="text-lg mb-2 text-white">
+            Correct Answers:{" "}
+            <span className="font-bold text-white">{score}</span>
           </p>
-          <p className="text-lg mb-4">
+          <p className="text-lg mb-4 text-white">
             Wrong Answers:{" "}
             <span className="font-bold">{quiz.questions.length - score}</span>
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg"
+            className="mt-4 bg-black text-white py-2 px-6 rounded-lg"
           >
             Retake Quiz
           </button>
@@ -80,12 +83,12 @@ export default function QuizPage() {
     );
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-4">{quiz.title}</h1>
-      <p className="text-gray-600 mb-6">{quiz.description}</p>
+    <div className="min-h-screen bg-black p-6 flex flex-col items-center">
+      <h1 className="text-3xl font-bold mb-4 text-white">{quiz.title}</h1>
+      <p className="text-white mb-6">{quiz.description}</p>
 
-      <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-xl">
-        <h2 className="text-lg font-semibold mb-4">
+      <div className="bg-neutral-900 rounded-xl shadow-md p-6 w-full max-w-xl">
+        <h2 className="text-lg text-white font-semibold mb-4">
           Q{currentQ + 1}. {question.question}
         </h2>
 
@@ -94,11 +97,12 @@ export default function QuizPage() {
             <button
               key={idx}
               onClick={() => setSelected(idx)}
-              className={`px-4 py-2 rounded-lg border text-left ${
-                selected === idx
-                  ? "bg-blue-500 text-white"
-                  : "hover:bg-gray-100"
-              }`}
+              className={`px-4 py-2 rounded-lg border w-full text-left transition duration-200
+        ${
+          selected === idx
+            ? "bg-white text-black border-blue-600"
+            : "bg-neutral-700 text-white border-gray-600 hover:bg-neutral-600"
+        }`}
             >
               {opt}
             </button>
@@ -107,7 +111,7 @@ export default function QuizPage() {
 
         <button
           onClick={handleNext}
-          className="mt-6 w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg"
+          className="mt-6 w-full bg-black text-white py-2 rounded-lg"
         >
           {currentQ === quiz.questions.length - 1 ? "Finish" : "Next"}
         </button>

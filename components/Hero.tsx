@@ -3,8 +3,7 @@ const Hero = () => {
   return (
     <div className="h-[460px] w-full flex flex-col justify-center items-center text-center px-4 bg-black mt-17 mb-18">
       <h6 className="text-lg text-gray-300 mb-2 tracking-wide">
-        Welcome to{" "}
-        <span className="font-bold hover:text-blue-500">QuizSphere</span>
+        Welcome to <span className="font-bold">QuizSphere</span>
       </h6>
 
       <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 max-w-4xl">
@@ -18,7 +17,7 @@ const Hero = () => {
       </p>
       <Link
         href="/signin"
-        className="inline-block mt-6 px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
+        className="inline-block mt-6 px-6 py-3 bg-neutral-800 text-white font-bold rounded-lg transition"
       >
         Get Started
       </Link>

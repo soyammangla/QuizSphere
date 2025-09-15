@@ -6,16 +6,14 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & Tagline */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-3 hover:text-blue-500">
-            QuizSphere
-          </h2>
-          <p className="text-sm text-gray-400">
+          <h2 className="text-2xl font-bold text-white mb-3">QuizSphere</h2>
+          <p className="text-sm text-white">
             Building in public at{" "}
             <a
               href="https://twitter.com/soyam_mangla"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline "
+              className="font-bold hover:underline "
             >
               @soyam
             </a>
@@ -25,19 +23,19 @@ export default function Footer() {
         {/* Features */}
         <div className="ml-auto">
           <h3 className="text-lg font-semibold text-white mb-4">Features</h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-white">
             <li>
-              <Link href="/" className="hover:text-white transition">
+              <Link href="/" className="transition">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/createquiz" className="hover:text-white transition">
+              <Link href="/createquiz" className="transition">
                 Create Quiz
               </Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-white transition">
+              <Link href="/about" className="transition">
                 About
               </Link>
             </li>
@@ -47,12 +45,12 @@ export default function Footer() {
         {/* Social */}
         <div className="ml-auto">
           <h3 className="text-lg font-semibold text-white mb-4">Social</h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-white">
             <li>
               <a
                 href="https://www.linkedin.com/in/soyam-mangla-432b13365/"
                 target="_blank"
-                className="hover:text-white transition"
+                className="transition"
               >
                 LinkedIn
               </a>
@@ -61,7 +59,7 @@ export default function Footer() {
               <a
                 href="https://x.com/soyam_mangla"
                 target="_blank"
-                className="hover:text-white transition"
+                className="transition"
               >
                 Twitter
               </a>
@@ -70,7 +68,7 @@ export default function Footer() {
               <a
                 href="https://github.com/soyammangla"
                 target="_blank"
-                className="hover:text-white transition"
+                className="transition"
               >
                 GitHub
               </a>
@@ -81,19 +79,19 @@ export default function Footer() {
         {/* Others */}
         <div className="ml-auto">
           <h3 className="text-lg font-semibold text-white mb-4">Others</h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-white">
             <li>
-              <Link href="/about" className="hover:text-white transition">
+              <Link href="/about" className="transition">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/privacy" className="hover:text-white transition">
+              <Link href="/privacy" className=" transition">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:text-white transition">
+              <Link href="/terms" className="transition">
                 Terms & Conditions
               </Link>
             </li>
@@ -102,15 +100,15 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
+      <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-white">
         © {new Date().getFullYear()} QuizSphere. Crafted with ❤️ by{" "}
         <a
           href="https://twitter.com/soyam_mangla"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white hover:underline"
+          className="text-white font-bold hover:underline"
         >
-          @soyam
+          soyam
         </a>
       </div>
     </footer>
