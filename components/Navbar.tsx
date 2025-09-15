@@ -6,13 +6,13 @@ const Navbar = () => {
       <h1 className="text-xl font-bold text-white">QuizSphere</h1>
 
       <div className="flex space-x-10 ml-180">
-        <Link href="/" className="text-white hover:text-blue-600">
+        <Link href="/" className="text-white">
           Home
         </Link>
-        <Link href="/quiz" className="text-white hover:text-blue-600">
+        <Link href="/quiz" className="text-white">
           Quiz
         </Link>
-        <Link href="/about" className="text-white hover:text-blue-600">
+        <Link href="/about" className="text-white">
           About
         </Link>
       </div>
