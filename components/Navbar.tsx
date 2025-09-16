@@ -4,7 +4,6 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center p-4 bg-black shadow-md mx-30">
       <h1 className="text-xl font-bold text-white">QuizSphere</h1>
-
       <div className="flex space-x-10 ml-180">
         <Link href="/" className="text-white">
           Home
