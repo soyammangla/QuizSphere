@@ -43,7 +43,7 @@ export default function Page() {
   };
 
   return (
-    <section className="max-w-[50%] mx-auto py-16 text-white">
+    <section className="max-w-[50%] mx-auto py-16 bg-white text-black dark:bg-black dark:text-white transition-colors">
       <h2 className="text-4xl font-bold text-center mb-10">
         Frequently Asked Questions
       </h2>
@@ -51,17 +51,19 @@ export default function Page() {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="bg-neutral-900 rounded-lg shadow-md overflow-hidden"
+            className="bg-gray-200 dark:bg-neutral-900 rounded-lg shadow-md overflow-hidden transition-colors"
           >
             <button
               onClick={() => toggleFaq(index)}
-              className="w-full flex justify-between items-center px-6 py-4 text-left font-medium transition"
+              className="w-full flex justify-between items-center px-6 py-4 text-left font-medium transition-colors"
             >
               <span>{faq.question}</span>
               <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
             </button>
             {openIndex === index && (
-              <div className="px-6 pb-4 text-gray-300 mt-2">{faq.answer}</div>
+              <div className="px-6 pb-4 mt-2 text-black dark:text-gray-300 transition-colors">
+                {faq.answer}
+              </div>
             )}
           </div>
         ))}

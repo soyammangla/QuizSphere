@@ -1,7 +1,8 @@
 import Link from "next/link";
+
 export default function PrivacyPolicy() {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16 text-white">
+    <section className="max-w-5xl mx-auto px-6 py-16 bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
       <h1 className="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>
       <p className="mb-10 text-center">
         At QuizSphere, your privacy is very important to us. This Privacy Policy
@@ -9,7 +10,6 @@ export default function PrivacyPolicy() {
         our platform.
       </p>
 
-      {/* Information We Collect */}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-3">
           1. Information We Collect
@@ -30,7 +30,6 @@ export default function PrivacyPolicy() {
         </ul>
       </div>
 
-      {/* How We Use Data */}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-3">
           2. How We Use Your Information
@@ -44,7 +43,6 @@ export default function PrivacyPolicy() {
         </ul>
       </div>
 
-      {/* Sharing Data */}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-3">
           3. Sharing of Information
@@ -58,7 +56,6 @@ export default function PrivacyPolicy() {
         </p>
       </div>
 
-      {/* Cookies */}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-3">4. Cookies</h2>
         <p>
@@ -68,7 +65,6 @@ export default function PrivacyPolicy() {
         </p>
       </div>
 
-      {/* User Rights */}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-3">5. Your Rights</h2>
         <p>You have the right to:</p>
@@ -78,10 +74,11 @@ export default function PrivacyPolicy() {
           <li>Withdraw consent for email/notifications at any time.</li>
         </ul>
       </div>
+
       <div className="text-center mt-8 hover:underline">
         <Link
           href="/"
-          className="inline-block text-white font-semibold py-2 px-6 rounded-lg"
+          className="inline-block px-6 py-2 rounded-lg bg-black text-white dark:bg-white dark:text-black font-semibold transition-colors duration-300"
         >
           Back to QuizSphere
         </Link>

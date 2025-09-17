@@ -1,7 +1,8 @@
 import Link from "next/link";
+
 export default function TermsAndConditions() {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16 text-white">
+    <section className="max-w-5xl mx-auto px-6 py-16 bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
       {/* Heading */}
       <h1 className="text-4xl font-bold mb-6 text-center">
         Terms and Conditions
@@ -64,10 +65,11 @@ export default function TermsAndConditions() {
           of data.
         </p>
       </div>
+
       <div className="text-center mt-8 hover:underline">
         <Link
           href="/"
-          className="inline-block text-white font-semibold py-2 px-6 rounded-lg"
+          className="inline-block px-6 py-2 rounded-lg bg-black text-white dark:bg-white dark:text-black font-semibold transition-colors duration-300"
         >
           Back to QuizSphere
         </Link>

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 interface Question {
   question: string;
   options: string[];
-  correctOption: number; // 0,1,2,3
+  correctOption: number;
 }
 
 export default function CreateQuiz() {
@@ -39,17 +39,16 @@ export default function CreateQuiz() {
     value?: string | number
   ) => {
     const updated = [...questions];
-    if (field === "question" && typeof value === "string") {
+    if (field === "question" && typeof value === "string")
       updated[qIndex].question = value;
-    } else if (
+    else if (
       field === "options" &&
       typeof value === "string" &&
       optIndex !== undefined
-    ) {
+    )
       updated[qIndex].options[optIndex] = value;
-    } else if (field === "correctOption" && typeof value === "number") {
+    else if (field === "correctOption" && typeof value === "number")
       updated[qIndex].correctOption = value;
-    }
     setQuestions(updated);
   };
 
@@ -65,73 +64,60 @@ export default function CreateQuiz() {
       created: new Date().toLocaleDateString(),
     };
     localStorage.setItem("tempQuiz", JSON.stringify(newQuiz));
-    console.log("Created Quiz:", newQuiz);
-    router.push("/finalquiz"); // ya dashboard ke liye redirect
+    router.push("/finalquiz");
   };
 
   return (
-    <div className="min-h-screen bg-black p-6">
-      {/* Centered form container */}
-      <div className="bg-neutral-950 w-full max-w-4xl mx-auto rounded-2xl shadow-xl p-8">
-        <h1 className="text-3xl font-bold text-white mb-4 text-center">
-          Create New Quiz
-        </h1>
-        <p className="text-white mb-6 text-center">
+    <div className="min-h-screen p-6 bg-white text-black dark:bg-black dark:text-white transition-colors">
+      <div className="bg-gray-100 dark:bg-neutral-950 w-full max-w-4xl mx-auto rounded-2xl shadow-xl p-8 transition-colors">
+        <h1 className="text-3xl font-bold mb-4 text-center">Create New Quiz</h1>
+        <p className="mb-6 text-center">
           Add questions with multiple choice options
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Quiz Info */}
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-white font-medium mb-2">
-                Quiz Title
-              </label>
+              <label className="block font-medium mb-2">Quiz Title</label>
               <input
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Enter quiz title"
-                className="w-full bg-neutral-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 placeholder-white"
+                className="w-full px-3 py-2 rounded-lg bg-gray-200 dark:bg-neutral-700 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 transition-colors"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-white font-medium mb-2">
-                Category
-              </label>
+              <label className="block font-medium mb-2">Category</label>
               <input
                 type="text"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 placeholder="Enter quiz category"
-                className="w-full bg-neutral-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 placeholder-white"
+                className="w-full px-3 py-2 rounded-lg bg-gray-200 dark:bg-neutral-700 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 transition-colors"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-white font-medium mb-2">
-              Description
-            </label>
+            <label className="block font-medium mb-2">Description</label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Enter quiz description"
-              className="w-full bg-neutral-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 placeholder-white"
+              className="w-full px-3 py-2 rounded-lg bg-gray-200 dark:bg-neutral-700 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 transition-colors"
               rows={3}
             />
           </div>
 
           <div>
-            <label className="block text-white font-medium mb-2">
-              Difficulty
-            </label>
+            <label className="block font-medium mb-2">Difficulty</label>
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value)}
-              className="w-full bg-neutral-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:ring-2 placeholder-white"
+              className="w-full px-3 py-2 rounded-lg bg-gray-200 dark:bg-neutral-700 text-black dark:text-white focus:outline-none focus:ring-2 transition-colors"
             >
               <option>Easy</option>
               <option>Medium</option>
@@ -139,14 +125,13 @@ export default function CreateQuiz() {
             </select>
           </div>
 
-          {/* Questions */}
           <div>
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-xl font-semibold text-white">Questions</h2>
+              <h2 className="text-xl font-semibold">Questions</h2>
               <button
                 type="button"
                 onClick={addQuestion}
-                className="bg-neutral-700 hover:bg-neutral-600 text-white px-4 py-2 rounded-lg shadow-md transition"
+                className="px-4 py-2 rounded-lg shadow-md bg-gray-200 dark:bg-neutral-700 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-neutral-600 transition"
               >
                 + Add Question
               </button>
@@ -155,10 +140,10 @@ export default function CreateQuiz() {
             {questions.map((q, idx) => (
               <div
                 key={idx}
-                className="bg-neutral-900 border border-gray-700 p-4 rounded-lg mb-4"
+                className="bg-gray-200 dark:bg-neutral-900 border border-gray-400 dark:border-gray-700 p-4 rounded-lg mb-4 transition-colors"
               >
                 <div className="flex justify-between items-center mb-2">
-                  <h3 className="font-medium text-white">Question {idx + 1}</h3>
+                  <h3 className="font-medium">Question {idx + 1}</h3>
                   {questions.length > 1 && (
                     <button
                       type="button"
@@ -170,7 +155,6 @@ export default function CreateQuiz() {
                   )}
                 </div>
 
-                {/* Question text */}
                 <input
                   type="text"
                   value={q.question}
@@ -183,11 +167,10 @@ export default function CreateQuiz() {
                     )
                   }
                   placeholder="Enter your question"
-                  className="w-full bg-neutral-700 text-white px-3 py-2 border border-gray-600 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-white placeholder-white"
+                  className="w-full px-3 py-2 border rounded-lg border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-neutral-700 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 transition-colors mb-3"
                   required
                 />
 
-                {/* Options + correct */}
                 <div className="grid grid-cols-2 gap-3">
                   {q.options.map((opt, optIdx) => (
                     <div key={optIdx} className="flex items-center gap-2">
@@ -203,10 +186,10 @@ export default function CreateQuiz() {
                           )
                         }
                         placeholder={`Option ${optIdx + 1}`}
-                        className="w-full bg-neutral-700 text-white px-3 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white placeholder-white"
+                        className="w-full px-3 py-2 border rounded-lg border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-neutral-700 text-black dark:text-white placeholder-black dark:placeholder-white focus:outline-none focus:ring-2 transition-colors"
                         required
                       />
-                      <label className="text-sm text-white flex items-center gap-1">
+                      <label className="text-sm flex items-center gap-1">
                         <input
                           type="radio"
                           name={`correct-${idx}`}
@@ -219,7 +202,7 @@ export default function CreateQuiz() {
                               optIdx
                             )
                           }
-                          className="accent-black"
+                          className="accent-black dark:accent-white"
                         />
                         Correct
                       </label>
@@ -233,7 +216,7 @@ export default function CreateQuiz() {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-neutral-700 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transition transform duration-300"
+              className="px-8 py-3 rounded-full shadow-lg bg-gray-200 dark:bg-neutral-700 text-black dark:text-white hover:scale-105 transition transform duration-300"
             >
               Create Quiz
             </button>

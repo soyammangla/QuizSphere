@@ -3,39 +3,36 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className="pt-14 justify-center min-h-screen flex">
+    <div className="pt-14 justify-center min-h-screen flex bg-white text-black dark:bg-black dark:text-white transition-colors">
       <div className="max-w-4xl px-6 text-center">
-        {" "}
-        <h3 className="font-bold text-white text-4xl">About QuizSphere</h3>{" "}
-        <div className="mt-10 flex items-center">
-          {" "}
+        <h3 className="font-bold text-4xl mb-10">About QuizSphere</h3>
+
+        <div className="mt-10 flex flex-col md:flex-row items-center">
           <Image
             src="/quiz.jpeg"
             alt="QuizSphere"
             width={100}
             height={100}
-            className="w-100 h-100 object-contain rounded-2xl shadow-lg mr-5"
-          />{" "}
-          <p className="text-white max-w-3xl text-left text-lg ml-5">
-            {" "}
+            className="w-100 h-100 object-contain rounded-2xl shadow-lg md:mr-5 mb-5 md:mb-0"
+          />
+          <p className="max-w-3xl text-left text-lg">
             QuizSphere is a modern platform designed to make learning fun and
-            interactive. <br /> Whether you’re a student, a professional, or
-            just curious, our quizzes help you learn, test, and grow in an
-            engaging way. <br /> We believe in {`"learning by doing"`}, so every
-            quiz is built to challenge and entertain while educating. <br />{" "}
+            interactive. <br />
+            Whether you’re a student, a professional, or just curious, our
+            quizzes help you learn, test, and grow in an engaging way. <br />
+            We believe in {`"learning by doing"`}, so every quiz is built to
+            challenge and entertain while educating. <br />
             With a smooth user experience and gamified elements, QuizSphere
-            makes studying more exciting. <br /> Our vision is to create a
-            global hub where knowledge meets curiosity — and fun becomes part of
-            learning.{" "}
-          </p>{" "}
+            makes studying more exciting. <br />
+            Our vision is to create a global hub where knowledge meets curiosity
+            — and fun becomes part of learning.
+          </p>
         </div>
+
         {/* Social Links */}
         <div className="mt-16 text-center">
-          <h2 className="text-white text-3xl font-bold mb-4">
-            Connect With Us
-          </h2>
-
-          <div className="flex justify-center space-x-6 text-white">
+          <h2 className="text-3xl font-bold mb-4">Connect With Us</h2>
+          <div className="flex justify-center space-x-6">
             <a
               href="https://github.com/soyammangla"
               target="_blank"
