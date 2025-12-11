@@ -34,12 +34,13 @@
   },
   "devDependencies": {
     "@types/node": "24.10.1",
+    "eslint": "^9.39.1",
     "prisma": "^7.1.0",
     "typescript": "5.9.3"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
