@@ -20,7 +20,7 @@ const Hero = () => {
 
       <Link
         href="/signin"
-        className="inline-block mt-6 px-6 py-3 bg-gray-200 text-black dark:bg-neutral-800 dark:text-white font-bold rounded-lg transition"
+        className="inline-block mt-6 px-6 py-3 bg-black text-white dark:bg-white dark:text-black font-bold rounded-lg transition"
       >
         Get Started
       </Link>

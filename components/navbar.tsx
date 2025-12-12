@@ -155,7 +155,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             {/* Desktop Sign In */}
             <div className="hidden md:flex">
-              <div className="flex items-center bg-neutral-100 border text-black border-neutral-800 rounded-xl font-medium text-xl space-x-6">
+              <div className="flex items-center bg-neutral-100 dark:bg-neutral-900 border text-black dark:text-white border-neutral-800 rounded-xl font-medium text-xl space-x-6">
                 {session?.user ? (
                   <UserAccountNav user={session.user} />
                 ) : (

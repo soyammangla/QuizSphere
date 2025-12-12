@@ -16,21 +16,21 @@ interface Quiz {
 export default function QuizDashboard() {
   const router = useRouter();
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
-  const [darkMode, setDarkMode] = useState(true);
+  // const [darkMode, setDarkMode] = useState(true);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("quizzes");
-    if (saved) setQuizzes(JSON.parse(saved));
+  // useEffect(() => {
+  //   const saved = localStorage.getItem("quizzes");
+  //   if (saved) setQuizzes(JSON.parse(saved));
 
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark") setDarkMode(true);
-    else if (storedTheme === "light") setDarkMode(false);
-  }, []);
+  //   const storedTheme = localStorage.getItem("theme");
+  //   if (storedTheme === "dark") setDarkMode(true);
+  //   else if (storedTheme === "light") setDarkMode(false);
+  // }, []);
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
-  }, [darkMode]);
+  // useEffect(() => {
+  //   document.documentElement.classList.toggle("dark", darkMode);
+  //   localStorage.setItem("theme", darkMode ? "dark" : "light");
+  // }, [darkMode]);
 
   return (
     <div className="min-h-screen transition-colors duration-300 p-4 sm:p-6 md:p-8 bg-white dark:bg-black text-black dark:text-white">
