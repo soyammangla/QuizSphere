@@ -126,7 +126,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="text-2xl font-bold tracking-tight">
-            <Link href="/">QuickDo</Link>
+            <Link href="/">QuizSphere</Link>
           </div>
 
           {/* Desktop Menu */}
@@ -138,13 +138,13 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/task" className="transition">
-                  Tasks
+                <Link href="/quiz" className="transition">
+                  Quiz
                 </Link>
               </li>
               <li>
-                <Link href="/calendar" className="transition">
-                  Calendar
+                <Link href="/about" className="transition">
+                  About
                 </Link>
               </li>
             </ul>
@@ -195,20 +195,20 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="/task"
+                  href="/quiz"
                   className="transition"
                   onClick={() => setIsOpen(false)}
                 >
-                  Tasks
+                  Quiz
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/calendar"
+                  href="/about"
                   className="transition"
                   onClick={() => setIsOpen(false)}
                 >
-                  Calendar
+                  About
                 </Link>
               </li>
             </ul>
