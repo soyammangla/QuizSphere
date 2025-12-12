@@ -1,71 +1,69 @@
 "use client";
-import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { signIn } from "next-auth/react";
 
-export default function Home() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-  };
+export default function AuthPage() {
   return (
-    <>
-      <Head>
-        <title>Donezo- Everything you need</title>
-        <meta name="description" content="Create content like never before" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="flex h-screen w-full">
-        <div className="relative flex-1 hidden lg:block">
-          <div className="absolute top-8 left-8 z-10">
-            <span className="text-white text-2xl font-bold">Donezo</span>
-          </div>
-          <div className="absolute inset-0 flex items-center z-10 px-16">
-            <div>
-              <h1 className="text-white text-5xl font-bold leading-tight mb-6">
-                Everything you need,
-                <br />
-                to make anything you want.
-              </h1>
-              <p className="text-white text-xl opacity-90">
-                Dozens of creative tools to ideate, generate and edit
-                <br />
-                content like never before.
-              </p>
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-black bg-opacity-60 "></div>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-neutral-900 transition-colors duration-300 px-4 sm:px-6">
+      <div className="bg-white dark:bg-neutral-800 p-8 sm:p-10 rounded-2xl shadow-xl w-full max-w-md text-center">
+        <div className="flex justify-center mb-6">
           <Image
-            src="/city-background.jpg"
-            alt="City skyline"
-            fill
-            className="object-cover"
-            priority
+            src="/Google.png" // 🔹 place Google logo image in /public
+            alt="Google Logo"
+            width={60}
+            height={60}
+            className="rounded-full shadow-md"
           />
         </div>
-        <div className="flex-1 flex items-center justify-center p-8 bg-gray-500">
-          <div className="w-full max-w-md">
-            <h2 className="text-3xl font-bold text-center mb-6 text-black">
-              Welcome to Donezo
-            </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <Button
-                type="button"
-                className="w-full flex items-center text-black justify-center gap-2 border bg-white border-gray-300 font-medium py-3 px-4 rounded-full hover:bg-gray-50 transition duration-300"
-                onClick={() => {
-                  signIn("google", { callbackUrl: "/" });
-                }}
-              >
-                <Image src="/google.png" alt="Google" width={20} height={20} />
-                Log in with Google
-              </Button>
-            </form>
-          </div>
-        </div>
+        {/* Title */}
+        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-3">
+          Welcome to QuizSphere
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-black-600 dark:text-white-300 mb-8 text-sm sm:text-base">
+          Sign in securely using your Google account to continue.
+        </p>
+
+        {/* Google Sign-In Button */}
+        <button
+          type="button"
+          onClick={() => signIn("google", { callbackUrl: "/" })}
+          className="w-full flex items-center justify-center gap-3 border border-gray-300 dark:border-neutral-600 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-neutral-700 transition"
+        >
+          <Image
+            src="/Google.png"
+            alt="Google logo"
+            width={22}
+            height={22}
+            className="rounded-full shadow-md"
+          />
+          <span className="text-gray-700 dark:text-gray-200 font-medium text-sm sm:text-base">
+            Continue with Google
+          </span>
+        </button>
+
+        {/* Footer */}
+        <p className="text-black-500 dark:text-white-400 text-xs mt-8">
+          By continuing, you agree to QuizSphere’s{" "}
+          <Link
+            href="/terms"
+            className="text-blue-500 hover:underline cursor-pointer"
+          >
+            Terms
+          </Link>{" "}
+          &{" "}
+          <Link
+            href="/privacy"
+            className="text-blue-500 hover:underline cursor-pointer"
+          >
+            Privacy Policy
+          </Link>
+          .
+        </p>
       </div>
-    </>
+    </div>
   );
 }
