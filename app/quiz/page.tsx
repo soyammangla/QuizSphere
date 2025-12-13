@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 interface Question {
   question: string;
@@ -21,28 +22,52 @@ interface Quiz {
 
 export default function QuizDashboard() {
   const router = useRouter();
+  const { status } = useSession(); // 🔐 auth status
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
 
-  // 🔹 Load quizzes from LocalStorage
+  // 🔒 AUTH GUARD (CORE LOGIC)
   useEffect(() => {
-    const saved = localStorage.getItem("quizzes");
-    if (saved) {
-      try {
-        setQuizzes(JSON.parse(saved));
-      } catch (error) {
-        console.error("Failed to parse quizzes:", error);
-        setQuizzes([]);
+    if (status === "unauthenticated") {
+      router.replace("/signin?callbackUrl=/dashboard");
+    }
+  }, [status, router]);
+
+  // 📦 Load quizzes only when user is authenticated
+  useEffect(() => {
+    if (status === "authenticated") {
+      const saved = localStorage.getItem("quizzes");
+      if (saved) {
+        try {
+          setQuizzes(JSON.parse(saved));
+        } catch {
+          setQuizzes([]);
+        }
       }
     }
-  }, []);
+  }, [status]);
 
-  // 🔹 Delete quiz
+  // 🗑 Delete quiz
   const deleteQuiz = (id: number | string) => {
     const updated = quizzes.filter((q) => q.id !== id);
     localStorage.setItem("quizzes", JSON.stringify(updated));
     setQuizzes(updated);
   };
 
+  // ⏳ While session is checking
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-lg">
+        Checking authentication...
+      </div>
+    );
+  }
+
+  // 🚫 Redirecting to login
+  if (status === "unauthenticated") {
+    return null;
+  }
+
+  // ✅ USER AUTHENTICATED — PAGE RENDERS
   return (
     <div className="min-h-screen p-4 sm:p-6 md:p-8 bg-white dark:bg-black text-black dark:text-white transition-colors">
       {/* Header */}

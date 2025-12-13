@@ -30,10 +30,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/createquiz"
-                className="transition-colors hover:underline"
-              >
+              <Link href="/quiz" className="transition-colors hover:underline">
                 Create Quiz
               </Link>
             </li>
